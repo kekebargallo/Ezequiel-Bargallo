@@ -1,8 +1,11 @@
-const navBar = () => {
-    return <div class="navContainer">
-            <nav class="nav">
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.styles.css';
 
-        <ul class="navList">
+const navBar = () => {
+    return <header className="navContainer">
+            <nav className="nav">
+
+        <ul className="navList">
             <li>
                 <a href="#">Inicio</a>
             </li>
@@ -26,10 +29,11 @@ const navBar = () => {
                 Contactos
                 </a>
             </li>
+            <CartWidget />
         </ul>
 
     </nav>
-</div>
+</header>
 };
 
 export default navBar;
