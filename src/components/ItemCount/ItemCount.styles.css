@@ -1,0 +1,48 @@
+.countContainer{
+    display: grid;
+    margin: 0 auto;
+    width: 200px;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "decrease number increase";
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.decreaseCounter{
+    grid-area: decrease;
+    height: max-content;
+    width: max-content;
+    align-self: center;
+    justify-self: center;
+    font-size: 30px;
+    padding: 0;
+    background-color: rgb(238, 238, 238);
+    border: none;
+}
+
+.decreaseCounter:hover {
+    transform: scale(2, 1.2);
+}
+
+.numberCounter{
+    grid-area: number;
+    font-size: 30px;
+}
+
+.increaseCounter{
+    grid-area: increase;
+    height: max-content;
+    width: max-content;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+    padding: 0;
+    border: none;
+    background-color: rgb(238, 238, 238);
+}
+
+.increaseCounter:hover {
+    transform: scale(1.4, 1.4);
+}
