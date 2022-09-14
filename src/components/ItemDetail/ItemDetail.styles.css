@@ -1,0 +1,24 @@
+.container{
+    display: grid;
+    background-color: grey;
+    width: 500px;
+    height: 320px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "img img img tit tit tit"
+    "img img img des des des" "img img img des des des"
+    "img img img des des des" "img img img des des des"
+    "img img img price price count";
+    border-radius: 10px;
+    margin: 12px auto;
+}
+
+h2{
+    grid-area: tit;
+}
+
+img{
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+}
