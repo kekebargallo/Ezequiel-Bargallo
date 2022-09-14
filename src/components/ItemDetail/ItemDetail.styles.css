@@ -1,14 +1,14 @@
 .container{
     display: grid;
-    background-color: grey;
-    width: 500px;
+    background-color: rgb(173, 173, 173);
+    width: 520px;
     height: 320px;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "img img img tit tit tit"
     "img img img des des des" "img img img des des des"
-    "img img img des des des" "img img img des des des"
-    "img img img price price count";
+    "img img img price price price" "img img img price price price"
+    "img img img count count count";
     border-radius: 10px;
     margin: 12px auto;
 }
@@ -22,3 +22,28 @@ img{
     align-self: center;
     justify-self: center;
 }
+
+.des{
+    grid-area: des;
+    display: flex;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    margin: 0;
+}
+
+.price{
+    grid-area: price;
+    font-size: 30px;
+    display: flex;
+    height: max-content;
+    margin: 0;
+    align-self: center;
+}
+
+.itemCountDetail{
+    grid-area: count;
+    background-color: black;
+    padding: 10px
+}
+
