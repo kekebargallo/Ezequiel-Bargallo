@@ -1,7 +1,10 @@
 .countContainer{
+    grid-area: count;
+    align-self: center;
+    height: 30px;
     display: grid;
     margin: 0 auto;
-    width: 200px;
+    width: 120px;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "decrease number increase";
@@ -16,7 +19,7 @@
     width: max-content;
     align-self: center;
     justify-self: center;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0;
     background-color: rgb(238, 238, 238);
     border: none;
@@ -28,7 +31,8 @@
 
 .numberCounter{
     grid-area: number;
-    font-size: 30px;
+    font-size: 20px;
+    margin: 0;
 }
 
 .increaseCounter{
@@ -37,7 +41,7 @@
     width: max-content;
     justify-self: center;
     align-self: center;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0;
     border: none;
     background-color: rgb(238, 238, 238);

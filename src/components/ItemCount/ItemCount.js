@@ -6,7 +6,7 @@ const ItemCount = ( {stock, initial}) => {
     const [contador, setContador] = useState(initial)
 
     const increase = () => {
-        contador < 3 && setContador(contador + 1);
+        contador < stock && setContador(contador + 1);
     };
 
     const decrease = () => {

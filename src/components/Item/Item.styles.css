@@ -1,0 +1,21 @@
+.itemCard{
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 'img' 'img' 'img'
+    'tit' 'price';
+}
+
+img{
+    grid-area: img;
+}
+
+h2{
+    grid-area: tit;
+}
+
+h3{
+    grid-area: price;
+}

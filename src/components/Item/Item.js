@@ -1,14 +1,11 @@
-import ItemCount from "../ItemCount/ItemCount";
+import './Item.styles.css';
 
 const item = ({id, name, price, img}) => {
   return (
-    <div>
+    <div className='itemCard'>
         <img width={'200px'} src={img} alt={id} />
         <h2>{name}</h2>
         <h3>${price}</h3>
-        <ItemCount
-        stock={3}
-        initial={1} />
     </div>
   )
 };

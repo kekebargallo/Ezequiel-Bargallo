@@ -10,7 +10,7 @@
     grid-template-areas: "decrease number increase";
     background-color: rgb(238, 238, 238);
     border-radius: 10px;
-    overflow:visible;
+    overflow: hidden;
 }
 
 .decreaseCounter{
@@ -33,6 +33,7 @@
     grid-area: number;
     font-size: 20px;
     margin: 0;
+    justify-self: center;
 }
 
 .increaseCounter{

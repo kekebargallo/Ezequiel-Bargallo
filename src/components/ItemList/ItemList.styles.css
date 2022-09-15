@@ -1,0 +1,17 @@
+.itemListContainer{
+    display: grid;
+    width: 80%;
+    height: max-content;
+    margin: 40px auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 40px;
+    justify-items: center;
+}
+
+.cardContainer {
+    text-decoration: none;
+    color: black;
+    width: max-content;
+    height: max-content;
+}
