@@ -1,7 +1,0 @@
-.galeriaSquareCardListContainer{
-    display: grid;
-    width: 90%;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 20px auto;
-    row-gap: 20px;
-}

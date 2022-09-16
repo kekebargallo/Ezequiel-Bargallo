@@ -1,6 +1,7 @@
 const data = [
     {
-      id: "remCorta",
+      id: "remeraCorta",
+      categoria: "remeras",
       name: "Remera corta estampada",
       price: 3000,
       stock: 3,
@@ -13,6 +14,7 @@ const data = [
     },
     {
       id: "camisa",
+      categoria: "camisas",
       name: "Camisa sin mangas",
       price: 2500,
       stock: 3,
@@ -25,6 +27,7 @@ const data = [
     },
     {
       id: "pantalon",
+      categoria: "pantalones",
       name: "Pantalon Flaneur",
       price: 4000,
       stock: 2,
@@ -37,6 +40,7 @@ const data = [
     },
     {
       id: "cinturon",
+      categoria: "cinturones",
       name: "Cinturon Flaneur",
       price: 1200,
       stock: 3,
@@ -45,6 +49,46 @@ const data = [
         segundaImg: "/assets/img/cinturon-crudo.jpg",
         terceraImg: "/assets/img/cinturon-maniqui-frontal.jpg",
         imgCuadrada: "/assets/img/cinturon-maniqui-encuadrada.jpeg"
+      }
+    },
+    {
+      id: "camisaHolgada",
+      categoria: "camisas",
+      name: "Camisa Holgada",
+      price: 3200,
+      stock: 3,
+      img: {
+        primeraImg: "/assets/img/camisa-holgada.jpg"
+      }
+    },
+    {
+      id: "cargosHolgados",
+      categoria: "pantalones",
+      name: "Pantalones cargo holgados",
+      price: 1200,
+      stock: 3,
+      img: {
+        primeraImg: "/assets/img/cargos-holgados.jpg"
+      }
+    },
+    {
+      id: "punkiePants",
+      categoria: "pantalones",
+      name: "Pantalones estampados",
+      price: 1200,
+      stock: 3,
+      img: {
+        primeraImg: "/assets/img/punkie-pants.jpg"
+      }
+    },
+    {
+      id: "camisaSkater",
+      categoria: "camisas",
+      name: "Camisa skater",
+      price: 1200,
+      stock: 3,
+      img: {
+        primeraImg: "/assets/img/camisa-skater.jpg"
       }
     }
 ];

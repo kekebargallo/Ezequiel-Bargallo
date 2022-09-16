@@ -25,12 +25,22 @@ const navBar = () => {
               </li>
               <li>
                   <NavLink
-                  to={'/category/galeria'}
+                  to={'/category/camisas'}
                   className={({isActive}) =>
                   isActive
                   ? "headerLinkActive"
                   : "headerLinkInactive"}>
-                  Galería
+                  Camisas
+                  </NavLink>
+              </li>
+              <li>
+                  <NavLink
+                  to={'/category/pantalones'}
+                  className={({isActive}) =>
+                  isActive
+                  ? "headerLinkActive"
+                  : "headerLinkInactive"}>
+                  Pantalones
                   </NavLink>
               </li>
           </ul>
