@@ -10,6 +10,7 @@
 
 img{
     grid-area: img;
+    justify-self: center;
 }
 
 h2{

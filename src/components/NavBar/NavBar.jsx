@@ -1,39 +1,50 @@
-import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.styles.css';
+import { NavLink } from 'react-router-dom';
 
 const navBar = () => {
-    return <header className="navContainer">
-            <nav className="nav">
+    return <header className="header">
 
-        <ul className="navList">
-            <li>
-                <a href="#">Inicio</a>
-            </li>
-            <li>
-                <a href="#">
-                Shop
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                Galería
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                Sobre nosotros
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                Contactos
-                </a>
-            </li>
-            <CartWidget />
-        </ul>
+    <div className="headerLogo">
+      <NavLink to={'/'}>
+          <img className="headerLogoImg" src="/assets/img/flaneur_icon.jpeg" />
+      </NavLink>
+     </div>
+    
+      <nav className="headerNav">
 
-    </nav>
-</header>
+          <ul className="headerNavList">
+              <li>
+                  <NavLink
+                  to={'/'}
+                  className={({isActive}) =>
+                  isActive
+                  ? "headerLinkActive"
+                  : "headerLinkInactive"}>
+                  Home
+                  </NavLink>
+              </li>
+              <li>
+                  <NavLink
+                  to={'/category/galeria'}
+                  className={({isActive}) =>
+                  isActive
+                  ? "headerLinkActive"
+                  : "headerLinkInactive"}>
+                  Galería
+                  </NavLink>
+              </li>
+          </ul>
+
+      </nav>
+
+      <div className="headerCarrito">
+        <a><img className="headerInstaImg" src="/assets/img/carrito.png" /></a>
+      </div>
+
+      <div className="headerInsta">
+      <a href="https://www.instagram.com/flaneurenlaciudad/?hl=es-la" target="_blank"><img className="headerInstaImg" src="/assets/img/insta.png" /></a>
+      </div>
+  </header>
 };
 
 export default navBar;

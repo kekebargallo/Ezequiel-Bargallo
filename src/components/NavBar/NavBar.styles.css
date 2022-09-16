@@ -1,46 +1,91 @@
-.navContainer {
-    width: 100%;
-    height: 200px;
-    display: grid;
-  }
-  
-  .nav {
-    margin-top: 10px;
-    width: max-content;
-    height: 50px;
-    background-color: rgb(216, 216, 216);
-    margin: 0 auto;
-    border-radius: 10px;
-    align-self: center;
-    justify-self: center;
-  }
-  
-  .navList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0 auto;
-    padding-inline-start: 0px;
-  }
-  
-  .navList li {
-    margin: 7px 15px;
-  }
-  
-  .navList li a {
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
-    font-family: alicia;
-    transition: 0.3s;
-  }
-  
-  .navList li a:hover {
-    color: white;
-  }
-  
-  .navList li img {
-    width: 40px;
+.header {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "logo logo" "nav nav";
+}
 
-  }
+.headerLogo {
+  grid-area: logo;
+  height: 125px;
+  width: 125px;
+  margin: 0px auto;
+  justify-self: center;
+  align-self: center;
+}
+
+.headerLogoImg {
+  margin: 0 auto;
+  width: 125px;
+  height: 125px;
+}
+
+.headerNav {
+  grid-area: nav;
+  margin-top: 10px;
+  width: max-content;
+  height: 50px;
+  background-color: rgb(216, 216, 216);
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.headerNavList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0 auto;
+  padding-inline-start: 0px;
+}
+.headerNavList li {
+  margin: 7px 15px;
+}
+.headerLinkInactive {
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
+  font-family: alicia;
+  transition: 0.3s;
+}
+.headerLinkInactive:hover {
+  color: white;
+}
+
+.headerLinkActive{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 28px;
+  font-family: alicia;
+  transition: 0.3s;
+}
+.headerLinkActive:hover {
+  color: white;
+}
+
+.headerCarrito {
+  width: 300;
+  height: 50;
+  position: fixed;
+  top: 20px;
+  right: 70px;
+}
+
+.headerInsta {
+  width: 300;
+  height: 50;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.headerInstaImg {
+  width: 40px;
+  height: 40px;
+}
+.headerInstaImg:hover {
+  transform: scale(1.1, 1.1) translate(-3px, 3px);
+}
