@@ -8,7 +8,7 @@
     grid-template-areas: "img img img tit tit tit"
     "img img img des des des" "img img img des des des"
     "img img img price price price" "img img img price price price"
-    "img img img count count count";
+    "img img img count count cart";
     border-radius: 10px;
     margin: 12px auto;
 }
@@ -48,3 +48,22 @@ h2{
     padding: 10px
 }
 
+.cartLinkDetail {
+    grid-area: cart;
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    width: 70px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cartLinkDetail:hover {
+    color: white;
+    background-color: rgb(53, 53, 53);
+}

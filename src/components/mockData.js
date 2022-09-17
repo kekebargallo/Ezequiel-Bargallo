@@ -65,7 +65,7 @@ const data = [
       id: "cargosHolgados",
       categoria: "pantalones",
       name: "Pantalones cargo holgados",
-      price: 1200,
+      price: 6000,
       stock: 3,
       img: {
         primeraImg: "/assets/img/cargos-holgados.jpg"
@@ -75,7 +75,7 @@ const data = [
       id: "punkiePants",
       categoria: "pantalones",
       name: "Pantalones estampados",
-      price: 1200,
+      price: 5500,
       stock: 3,
       img: {
         primeraImg: "/assets/img/punkie-pants.jpg"
@@ -85,7 +85,7 @@ const data = [
       id: "camisaSkater",
       categoria: "camisas",
       name: "Camisa skater",
-      price: 1200,
+      price: 3000,
       stock: 3,
       img: {
         primeraImg: "/assets/img/camisa-skater.jpg"

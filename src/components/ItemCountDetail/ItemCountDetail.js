@@ -1,23 +1,24 @@
 import './ItemCountDetail.styles.css'
 import { useState } from 'react';
 
-const ItemCountDetail = ( {stock, initial}) => {
-
-    const [contador, setContador] = useState(initial)
+const ItemCountDetail = ( {stock, count, setCount}) => {
 
     const increase = () => {
-        contador < stock && setContador(contador + 1);
+      setCount(count + 1);
     };
 
     const decrease = () => {
-        contador > 1 && setContador(contador - 1);
+        count > 1 && setCount(count - 1);
     };
 
   return (
     <div className='countContainer'>
         <button onClick={decrease} className='decreaseCounter'>-</button>
-        <h4 className='numberCounter'>{contador}</h4>
-        <button onClick={increase} className='increaseCounter'>+</button>
+        <h4 className='numberCounter'>{count}</h4>
+        {count < stock
+        && <button
+        onClick={increase}
+        className='increaseCounter'>+</button>}
     </div>
   )
 }
