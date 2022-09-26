@@ -2,13 +2,20 @@ import ItemCountDetail from '../ItemCountDetail/ItemCountDetail';
 import './ItemDetail.styles.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/cartContext';
 
 const ItemDetail = ({product}) => {
 
   const [count, setCount] = useState(1);
 
-  const navigate = useNavigate();
+  const { addItem } = useContext(CartContext);
 
+  const onAdd = product => {
+    addItem(product, count);
+  }
+
+  const navigate = useNavigate();
   const handleClick = () => {
     navigate('/cart')
   }
@@ -23,7 +30,7 @@ const ItemDetail = ({product}) => {
         stock={product.stock}
         count={count}
         setCount={setCount}/>
-        <button onClick={handleClick} className='cartLinkDetail'>Agregar al carrito</button>
+        <button onClick={() => onAdd(product)} className='cartLinkDetail'>Agregar al carrito</button>
     </div>
   )
 };
