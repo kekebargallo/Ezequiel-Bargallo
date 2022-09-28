@@ -1,0 +1,86 @@
+@font-face {
+  font-family: bebop;
+  src: url("/public/assets/fonts/Cheltenham\ Condensed\ Bold.ttf");
+}
+
+.cardCart {
+  display: grid;
+  height: 220px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "img img tit tit tit link price price" "img img . remove remove link quantity quantity";
+  align-items: center;
+  justify-items: center;
+  background-color: rgb(216, 216, 216);
+  border-radius: 10px;
+}
+.cardCart .cardCartImg {
+  grid-area: img;
+  height: 100%;
+  display: flex;
+}
+.cardCart .cardCartImg img {
+  height: 90%;
+  align-self: center;
+}
+.cardCart .cardCartText {
+  grid-area: tit;
+  justify-self: start;
+}
+.cardCart .cardCartPrice {
+  align-self: end;
+  grid-area: price;
+}
+
+.cardCart .cardCartQuantity {
+  justify-self: center;
+  grid-area: quantity;
+}
+
+.cardCart .cardCartPrice p {
+  display: flex;
+  margin: 0 auto;
+  font-family: bebop;
+  font-size: 2rem;
+}
+
+.cardCart .cardCartQuantity {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-family: bebop;
+  font-size: 1.2rem;
+}
+
+.cardCart .cardCartRemoveButton, .cardCart .cardCartShopLink {
+  grid-area: remove;
+  width: max-content;
+  align-self: end;
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: rgba(145, 145, 145, 0.63);
+  margin-bottom: 3px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cardCart .cardCartRemoveButton span, .cardCart .cardCartShopLink span {
+  font-family: bebop;
+}
+.cardCart .cardCartRemoveButton:hover, .cardCart .cardCartShopLink:hover {
+  color: white;
+  background-color: rgb(31, 31, 31);
+}
+.cardCart .cardCartShopLink {
+  grid-area: link;
+  align-self: center;
+  justify-self: end;
+  padding: 20px 5px;
+  background-color: rgba(0, 0, 0, 0.945);
+  opacity: 0.8;
+  color: white;
+}
+.cardCart .cardCartShopLink:hover {
+  opacity: 1;
+}

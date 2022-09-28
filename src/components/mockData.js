@@ -58,7 +58,8 @@ const data = [
       price: 3200,
       stock: 3,
       img: {
-        primeraImg: "/assets/img/camisa-holgada.jpg"
+        primeraImg: "/assets/img/camisa-holgada.jpg",
+        imgCuadrada: "/assets/img/camisa-holgada-encuadrada.jpg"
       }
     },
     {
@@ -68,7 +69,8 @@ const data = [
       price: 6000,
       stock: 3,
       img: {
-        primeraImg: "/assets/img/cargos-holgados.jpg"
+        primeraImg: "/assets/img/cargos-holgados.jpg",
+        imgCuadrada: "/assets/img/cargos-holgados-encuadrada.jpg"
       }
     },
     {
@@ -78,7 +80,8 @@ const data = [
       price: 5500,
       stock: 3,
       img: {
-        primeraImg: "/assets/img/punkie-pants.jpg"
+        primeraImg: "/assets/img/punkie-pants.jpg",
+        imgCuadrada: "/assets/img/punkie-pants-encuadrada.jpg"
       }
     },
     {
@@ -88,7 +91,8 @@ const data = [
       price: 3000,
       stock: 3,
       img: {
-        primeraImg: "/assets/img/camisa-skater.jpg"
+        primeraImg: "/assets/img/camisa-skater.jpg",
+        imgCuadrada: "/assets/img/camisa-skater-encuadrada.jpg"
       }
     }
 ];

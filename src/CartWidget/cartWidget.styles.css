@@ -1,0 +1,30 @@
+.headerCart {
+    position: fixed;
+    top: 20px;
+    right: 75px;
+  }
+  
+  .headerCart img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .headerCartItemCounter {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .headerCart:hover {
+    transform: scale(1.1, 1.1) translate(-3px, 3px);
+  }

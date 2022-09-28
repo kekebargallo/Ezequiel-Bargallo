@@ -10,7 +10,7 @@ const CartProvider = ({children}) => {
       if(isInCart(item.id)){
         alert('Ya está en el carrito');
       }else{
-        setCart([...cart, {...item, quantity}]);
+        setCart([...cart, {...item, quantity, purchasePrice: item.price * quantity}]);
       }
       console.log(cart);
     };

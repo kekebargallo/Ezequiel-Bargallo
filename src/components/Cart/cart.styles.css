@@ -1,0 +1,14 @@
+.cartCheckout {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: ". . . . . . . . precio precio";
+    align-items: center;
+  }
+  
+  .cartCheckout p {
+    grid-area: precio;
+    display: flex;
+    font-family: bebop;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }

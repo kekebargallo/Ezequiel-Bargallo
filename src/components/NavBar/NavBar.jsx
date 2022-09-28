@@ -1,7 +1,10 @@
 import './NavBar.styles.css';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/cartContext';
+import CartWidget from '../../CartWidget/CartWidget';
 
-const navBar = () => {
+const NavBar = () => {
     return <header className="header">
 
     <div className="headerLogo">
@@ -46,10 +49,9 @@ const navBar = () => {
           </ul>
 
       </nav>
-
-      <div className="headerCarrito">
-        <a><img className="headerInstaImg" src="/assets/img/carrito.png" /></a>
-      </div>
+        
+        <CartWidget />
+      
 
       <div className="headerInsta">
       <a href="https://www.instagram.com/flaneurenlaciudad/?hl=es-la" target="_blank"><img className="headerInstaImg" src="/assets/img/insta.png" /></a>
@@ -57,4 +59,4 @@ const navBar = () => {
   </header>
 };
 
-export default navBar;
+export default NavBar;
