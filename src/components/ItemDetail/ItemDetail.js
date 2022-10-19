@@ -1,7 +1,7 @@
 import ItemCountDetail from '../ItemCountDetail/ItemCountDetail';
 import './ItemDetail.styles.css';
 import { useState, useContext } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
 const ItemDetail = ({product}) => {
@@ -21,7 +21,7 @@ const ItemDetail = ({product}) => {
     <div className="itemDetailContainer">
         <h2>{product.name}</h2>
         <img src={product.img.primeraImg} />
-        <p className="itemDetailDes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p className="itemDetailDes">{product.description}</p>
         <p className="itemDetailPrice">{product.price}$</p>
         <ItemCountDetail
         stock={product.stock}

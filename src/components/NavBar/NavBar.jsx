@@ -1,8 +1,6 @@
 import './NavBar.styles.css';
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { CartContext } from '../../context/cartContext';
-import CartWidget from '../../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return <header className="header">

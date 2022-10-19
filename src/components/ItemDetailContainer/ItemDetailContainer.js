@@ -1,7 +1,8 @@
-import data from '../mockData';
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import './itemDetailContainer.styles.css'
 
 const ItemDetailContainer = () => {
     
@@ -10,24 +11,25 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
 
   useEffect(() => {
-      getItemDetail
-      .then((response) => {
-        setProduct(response);
-      })
-      .catch(error => console.log(error));
+      getItemDetail();
     }, [])
 
-  const getItemDetail = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(data.find(element => element.id === id))
-      }, 2000)
-  });
+  const getItemDetail = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "items");
+    getDocs(querySnapshot)
+    .then(res => {
+      const data = res.docs.map(doc => (doc.data()));
+      setProduct(data.find(element => element.id === id));
+    })
+    .catch(err => console.log(err));
+  };
 
   return (
     <>
     {product 
     ? <ItemDetail product={product}/>
-    : <h2 style={{margin: '0 10px'}}> Obteniendo el detalle...</h2>}
+    : <img className="loadingItemDetail" src='/assets/img/flaneur_icon.jpeg' />}
     </>
   )
 };

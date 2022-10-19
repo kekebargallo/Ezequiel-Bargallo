@@ -3,12 +3,13 @@ import './cartCard.styles.css';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cartContext';
 
-const CartCard = ({id, name, price, img, quantity}) => {
+const CartCard = ({id, name, price, img, quantity, setCheck}) => {
 
   const { removeItem } = useContext(CartContext);
 
   const remove = itemId => {
     removeItem(itemId);
+    setCheck((current) => !current);
   };
 
   return (

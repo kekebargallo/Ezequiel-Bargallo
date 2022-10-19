@@ -2,6 +2,8 @@ import data from '../mockData';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
+import { getDocs, getFirestore, collection } from 'firebase/firestore';
+import './itemListContainer.styles.css'
 
 const ItemListContainer = () => {
 
@@ -10,25 +12,26 @@ const ItemListContainer = () => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts
-    .then((response) => {
-      setProductList(response);
-    })
-    .catch(error => console.log(error));
+    getProducts();
   }, [categoryId])
 
-  const getProducts = new Promise((res, rej) => {
-    setTimeout(() => {
+  const getProducts = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "items");
+    getDocs(querySnapshot)
+    .then(res => {
+      const data = res.docs.map(doc => (doc.data()));
       categoryId
-      ?res(data.filter(product => product.categoria === categoryId))
-      :res(data)
-    }, 2000)
-});
+      ?setProductList(data.filter(product => product.categoryId === categoryId))
+      :setProductList(data);
+    })
+    .catch(err => console.log(err));
+};
 
   return (
     <>{productList 
       ?<ItemList lista={productList}/>
-      :<h2 style={{margin: '0 10px'}}> Cargando...</h2>}
+      :<img className="loadingItemList" src='/assets/img/flaneur_icon.jpeg' />}
     </>
   )
 }

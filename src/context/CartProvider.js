@@ -12,7 +12,6 @@ const CartProvider = ({children}) => {
       }else{
         setCart([...cart, {...item, quantity, purchasePrice: item.price * quantity}]);
       }
-      console.log(cart);
     };
 
     const removeItem = id => {
