@@ -2,7 +2,7 @@
 Un e-commerce que simula una app de venta de ropa.
 
 ## Demo
-![GIF del funcionamiento de la app](/assets/FlaneurReact-Demo.gif)
+![GIF del funcionamiento de la app](/public/assets/FlaneurReact-Demo.gif)
 
 ## Lenguajes utilizados
 - HTML
