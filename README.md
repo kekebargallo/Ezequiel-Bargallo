@@ -1,3 +1,20 @@
+# Flaneur
+Un e-commerce que simula una app de venta de ropa.
+
+## Demo
+![GIF del funcionamiento de la app](/assets/FlaneurReact-Demo.gif)
+
+## Lenguajes utilizados
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+
+## Redes sociales
+Instagram del proyecto:
+[Flaneur](https://www.instagram.com/flaneurenlaciudad/?hl=es-la)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
