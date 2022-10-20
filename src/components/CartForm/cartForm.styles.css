@@ -1,0 +1,49 @@
+@font-face {
+    font-family: bebop;
+    src: url("/public/assets/fonts/Cheltenham\ Condensed\ Bold.ttf");
+}  
+
+.form {
+    display: grid;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'name tel' 'email emailConfirm' 'checkbox checkbox';
+}
+
+.formName{
+    grid-area: name;
+    display: grid;
+    justify-content: center;
+}
+
+.formTel{
+    grid-area: tel;
+    display: grid;
+    justify-content: center;
+}
+
+.formEmail{
+    grid-area: email;
+    display: grid;
+    justify-content: center;
+}
+
+.formEmailConfirm{
+    grid-area: emailConfirm;
+    display: grid;
+    justify-content: center;
+}
+
+.formCheckbox{
+    grid-area: checkbox;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-family: bebop;
+}

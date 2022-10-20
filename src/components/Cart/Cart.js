@@ -3,14 +3,24 @@ import { CartContext } from "../../context/cartContext";
 import './cart.styles.css';
 import CartCard from "../CartCard/CartCard";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
+import CartForm from "../CartForm/CartForm";
 
 const Cart = () => {
 
-    const { cart } = useContext(CartContext);
+    const { cart, clearCart } = useContext(CartContext);
 
     const finalPrice = cart.length > 0 ? cart.reduce((x, y) => x + y.purchasePrice, 0) : false;
 
     const [check, setCheck] = useState(false);
+
+    const [values, setValues] = useState({
+      name: '',
+      tel: '',
+      email: '',
+      emailConfirm: ''
+    });
+
+    const [checkoutForm, setCheckoutForm] = useState(false);
 
     const [order, setOrder] = useState({
       buyer: {
@@ -28,34 +38,23 @@ const Cart = () => {
     const createOrder = () => {
       const query = collection(db, 'orders');
       addDoc(query, order)
-      .then(res => alert('Felicidades por tu compra'))
+      .then(({ id }) => {
+        alert(`Felicidades! El código de su compra es ${id}`)
+        clearCart();
+      })
       .catch(err=> {
         alert('Lo sentimos, tu compra no se ha podido efectuar correctamente');
         console.log(err)
       });
     };
 
-    const handleChange = (e) => {
-      setOrder({
-        ...order,
-        buyer: {
-          ...order.buyer,
-          [e.target.name]: e.target.value
-        }
-      })
-    };
-
-    const checkCart = (e) => {
-      e.target.checked
-      && setOrder({
-        ...order,
-        items: cart,
-        total: finalPrice,
-        date: new Date()
-      })
-
-      setCheck((current) => (!current));
-    };
+    const finishPurchase = () => {
+      if(checkoutForm){
+        check ? createOrder() : alert("Para terminar la compra, verifica el formulario.");
+      }else{
+        setCheckoutForm(true);
+      }
+    }
 
   return (
     <>
@@ -69,19 +68,29 @@ const Cart = () => {
             price={purchasePrice}
             img={imgCuadrada}
             quantity={quantity}
-            setCheck={setCheck} />
+            setCheck={setCheck}
+            setCheckoutForm={setCheckoutForm} />
             )
         })
         }
 
         <article className='cartCheckout'>
-            <p onClick={createOrder}>Precio final: {finalPrice}</p>
+            <p>Precio final: {finalPrice}</p>
+            <button onClick={finishPurchase}>Terminar Compra</button>
         </article>
 
-        <input type="text" name="name" value={order.buyer.name} onChange={handleChange} />
-        <input type="text" name="tel" value={order.buyer.tel} onChange={handleChange} />
-        <input type="text" name="email" value={order.buyer.email} onChange={handleChange} />
-        <input type='checkbox' checked={check} onChange={checkCart} />
+        { checkoutForm
+          && <CartForm
+          setOrder={setOrder}
+          order={order}
+          setValues={setValues}
+          values={values}
+          setCheck={setCheck}
+          check={check}
+          finalPrice={finalPrice}
+          cart={cart} />
+        }
+        
     </>
   )
 }
